@@ -4,7 +4,7 @@ import type React from "react";
 
 import { useEffect, useState } from "react";
 import dados, { TarefaInterface } from "@/data";
-import Cabecalho from "@/componentes/Cabecalhot";
+import Cabecalho from "@/componentes/Cabecalho";
 
 interface TarefaProps {
 	titulo: string;
@@ -15,9 +15,7 @@ const Tarefa: React.FC<TarefaProps> = ({ titulo, concluido }) => {
 	const [estaConcluido, setEstaConcluido] = useState(concluido);
 
 	const classeCard = `p-3 mb-3 rounded-lg shadow-md hover:cursor-pointer hover:border ${
-		estaConcluido
-			? "bg-gray-800 hover:border-gray-800"
-			: "bg-gray-400 hover:border-gray-400"
+		estaConcluido ? "bg-gray-800 hover:border-gray-800" : "bg-gray-400 hover:border-gray-400"
 	}`;
 
 	const classeCorDoTexto = estaConcluido ? "text-amber-50" : "";
