@@ -61,25 +61,28 @@ const Home = () => {
 
   const adicionarNovaTarefa = (novaTarefa: string) => {
     const nova: TarefaInterface = {
-      id: tarefas.length + 1, // Gera um ID único
+      id: tarefas.length + 1,
       title: novaTarefa,
-      completed: false, // Por padrão, a tarefa começa como "não concluída"
+      completed: false,
     };
-    setTarefas([...tarefas, nova]); // Adiciona a nova tarefa ao estado
+    setTarefas([...tarefas, nova]);
   };
 
   return (
     <div className="container mx-auto p-4">
       <Cabecalho />
-      <button onClick={() => setMostrarModal(true)}>Adicionar Tarefa</button>
-      <Tarefas dados={tarefas} />
-      {mostrarModal && (
-        <ModalTarefa
-          onAddTarefa={adicionarNovaTarefa}
-          onClose={() => setMostrarModal(false)}
-        />
-      )}
+      <button className="p-3 text-2xl " onClick={() => setMostrarModal(true)}>Adicionar Tarefa</button>
+      <div className="p-2">
+			{mostrarModal && (
+			<ModalTarefa
+			onAddTarefa={adicionarNovaTarefa}
+			onClose={() => setMostrarModal(false)}
+				/>
+			)}
+		</div>
+	  <Tarefas dados={tarefas} />
     </div>
+	
   );
 };
 

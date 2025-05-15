@@ -21,17 +21,18 @@ const ModalTarefa: React.FC<ModalTarefaProps> = ({ onAddTarefa, onClose }) => {
     <div className="modal">
       <div className="modal-content">
         <input
-          className='border-2 border-gray-300 rounded p-2 fixed'
+          className='border-2 border-gray-300 rounded p-3'
           type="text"
           value={novaTarefa}
           onChange={(e) => setNovaTarefa(e.target.value)}
           placeholder="Digite a nova tarefa"
         />
-        <button onClick={adicionarTarefa}>Adicionar Tarefa</button>
-        <button onClick={onClose}>Fechar</button>
+        <button className='p-1' onClick={adicionarTarefa}>Adicionar</button>
+        <button className='p-1' onClick={onClose}>Fechar</button>
       </div>
     </div>
   );
 };
 
 export default ModalTarefa;
+
